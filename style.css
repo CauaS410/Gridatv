@@ -18,7 +18,7 @@ body {
 }
 
 /* Layout grid */
-.container {
+.grid-container {
     display: grid;
     grid-template-areas: 
         "header header"
@@ -31,45 +31,40 @@ body {
     margin: auto;
 }
 
-/* Header */
-.header {
-    grid-area: header;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-}
+/* Áreas do grid */
+.header { grid-area: header; }
+.mensagens { grid-area: mensagens; }
+.aulas { grid-area: aulas; }
+.noticias { grid-area: noticias; }
 
-/* Seções */
-.mensagens, .aulas, .noticias {
+/* Estilos das seções */
+.header, .mensagens, .aulas, .noticias {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .header, 
 .dark-mode .mensagens,
 .dark-mode .aulas,
 .dark-mode .noticias {
     background-color: #222;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
-/* Cards */
+/* Estilos dos cards */
 .card {
     background-color: #e3e3e3;
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
-    text-align: center;
 }
 
 .dark-mode .card {
     background-color: #333;
 }
 
-/* Botão modo escuro */
+/* Botão de modo escuro */
 #toggle-mode {
     position: fixed;
     top: 10px;
@@ -89,7 +84,12 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .container {
+    .grid-container {
         grid-template-areas: 
             "header"
-            "mensagens
+            "mensagens"
+            "aulas"
+            "noticias";
+        grid-template-columns: 1fr;
+    }
+}
