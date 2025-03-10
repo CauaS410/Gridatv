@@ -1,4 +1,4 @@
-/* Reset de estilos para evitar margens e preenchimentos padrões */
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
@@ -8,50 +8,52 @@
 /* Estilização do corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Fundo cinza claro */
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Garante que o conteúdo ocupe a tela toda */
+    min-height: 100vh;
 }
 
-/* Estilização do contêiner principal */
-.container {
-    width: 414px; /* Baseado no iPhone 11 */
+/* Estilização do container principal */
+.dashboard {
+    width: 414px;
     background: #fff;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Espaçamento entre os elementos */
+    gap: 16px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilização das seções */
-.header, .content, .footer {
-    background: #ddd; /* Cor temporária para visualização das áreas */
+.dashboard__header,
+.dashboard__content,
+.dashboard__footer {
+    background: #ddd;
     padding: 16px;
     border-radius: 8px;
     text-align: center;
 }
 
-/* Tamanhos específicos para cada área */
-.header {
+/* Definição de tamanhos específicos */
+.dashboard__header {
     height: 80px;
 }
 
-.content {
+.dashboard__content {
     flex-grow: 1;
     height: 400px;
 }
 
-.footer {
+.dashboard__footer {
     height: 60px;
 }
 
 /* Responsividade para tablets */
 @media (min-width: 768px) {
-    .container {
+    .dashboard {
         width: 600px;
     }
 }
