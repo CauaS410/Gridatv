@@ -41,18 +41,18 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 /* Áreas do grid */
 .header { grid-area: header; }
-.mensagens { grid-area: mensagens; }
-.aulas { grid-area: aulas; }
-.noticias { grid-area: noticias; }
+.mensagens { grid-area: mensagens; background-color: #f8d7da; }
+.aulas { grid-area: aulas; background-color: #d1ecf1; }
+.noticias { grid-area: noticias; background-color: #d4edda; }
 
 /* Estilos das seções */
 .header, .mensagens, .aulas, .noticias {
-    background-color: #fff;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -62,18 +62,21 @@ body {
 .header h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .dark-mode .header, 
 .dark-mode .mensagens,
 .dark-mode .aulas,
 .dark-mode .noticias {
-    background-color: #222;
+    background-color: #333;
+    color: #fff;
 }
 
 /* Estilos dos cards */
 .card {
-    background-color: #e3e3e3;
+    background-color: #fff;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
@@ -82,8 +85,8 @@ body {
 }
 
 .dark-mode .card {
-    background-color: #333;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    background-color: #555;
+    color: #fff;
 }
 
 /* Botão de modo escuro */
@@ -119,6 +122,6 @@ body {
             "aulas"
             "noticias";
         grid-template-columns: 1fr;
-        width: 100%;
+        width: 90%;
     }
 }
