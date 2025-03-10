@@ -1,4 +1,4 @@
-/* Resetando margin e padding */
+/* Reset e estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -7,131 +7,89 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #000;
-}
-
-/* Container */
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-.sidebar h2 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    transition: background-color 0.3s;
-}
-
-.sidebar nav ul li a:hover {
-    background-color: #444;
-}
-
-/* Main content */
-.main-content {
-    flex-grow: 1;
     background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
+    color: #000;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Layout grid */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "mensagens aulas"
+        "noticias noticias";
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Header */
 .header {
+    grid-area: header;
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
+    border-radius: 8px;
+}
+
+/* Seções */
+.mensagens, .aulas, .noticias {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .mensagens,
+.dark-mode .aulas,
+.dark-mode .noticias {
+    background-color: #222;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 /* Cards */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
 .card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
+    background-color: #e3e3e3;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
     text-align: center;
-    transition: transform 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.dark-mode .card {
+    background-color: #333;
 }
 
-.card:nth-child(odd) {
-    background-color: #f9f9f9;
-}
-
-/* Footer */
-.footer {
+/* Botão modo escuro */
+#toggle-mode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
     background-color: #333;
     color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin-top: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode #toggle-mode {
+    background-color: #fff;
+    color: #000;
 }
 
 /* Responsividade */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-        padding: 10px;
-    }
-    
-    .main-content {
-        padding: 20px;
-    }
-    
-    .cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .sidebar nav ul li a {
-        font-size: 16px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-}
+        grid-template-areas: 
+            "header"
+            "mensagens
