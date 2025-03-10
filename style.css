@@ -6,18 +6,19 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
     color: #000;
     transition: background 0.3s, color 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     text-align: center;
 }
@@ -39,7 +40,8 @@ body {
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 /* Áreas do grid */
@@ -51,9 +53,15 @@ body {
 /* Estilos das seções */
 .header, .mensagens, .aulas, .noticias {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .dark-mode .header, 
@@ -68,16 +76,19 @@ body {
     background-color: #e3e3e3;
     padding: 15px;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .card {
     background-color: #333;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 /* Botão de modo escuro */
 #toggle-mode {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     padding: 10px 15px;
@@ -86,6 +97,12 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+#toggle-mode:hover {
+    background-color: #555;
 }
 
 .dark-mode #toggle-mode {
@@ -94,7 +111,7 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .grid-container {
         grid-template-areas: 
             "header"
@@ -102,5 +119,6 @@ body {
             "aulas"
             "noticias";
         grid-template-columns: 1fr;
+        width: 100%;
     }
 }
