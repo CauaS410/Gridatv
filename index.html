@@ -3,42 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard App Inatel</title>
+    <title>Dashboard Responsivo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="toggle-mode">Alternar Modo</button>
     <div class="container">
-        <!-- Menu Lateral -->
-        <aside class="sidebar">
-            <h2>Menu</h2>
-            <nav>
-                <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <header class="header">
+            <h2>Olá, Raphael</h2>
+            <p>Você possui um armário reservado com entrega para hoje...</p>
+            <p>Você possui uma pendência no financeiro...</p>
+        </header>
         
-        <!-- Área Principal -->
-        <div class="main-content">
-            <!-- Cabeçalho -->
-            <header class="header">
-                <h1>Dashboard Inatel</h1>
-            </header>
-            
-            <!-- Seção de Cards -->
-            <section class="cards">
-                <div class="card">Card 1</div>
-                <div class="card">Card 2</div>
-                <div class="card">Card 3</div>
-            </section>
-            
-            <!-- Rodapé -->
-            <footer class="footer">
-                <p>Rodapé</p>
-            </footer>
-        </div>
+        <section class="mensagens">
+            <h3>Mensagens</h3>
+            <div class="card">Mensagem 1</div>
+            <div class="card">Mensagem 2</div>
+        </section>
+        
+        <main class="aulas">
+            <h3>Aulas</h3>
+            <div class="card">Disciplina 1 - Sala e Horário</div>
+            <div class="card">Disciplina 2 - Sala e Horário</div>
+            <div class="card">Disciplina 3 - Sala e Horário</div>
+        </main>
+        
+        <section class="noticias">
+            <h3>Notícias</h3>
+            <div class="card">Card de Notícias - Subtítulo</div>
+        </section>
     </div>
+    <script>
+        const toggleButton = document.getElementById('toggle-mode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
