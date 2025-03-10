@@ -1,59 +1,78 @@
-/* Reset de estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Estilização do corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+        /* Estilização do corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
 
-/* Estilização do container principal */
-.dashboard {
-    width: 414px;
-    background: #fff;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+        /* Container principal do dashboard */
+        .dashboard {
+            width: 414px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-/* Estilização das seções */
-.dashboard__header,
-.dashboard__content,
-.dashboard__footer {
-    background: #ddd;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-}
+        /* Estilização do menu lateral */
+        .dashboard__sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 16px;
+            text-align: center;
+        }
 
-/* Definição de tamanhos específicos */
-.dashboard__header {
-    height: 80px;
-}
+        /* Cabeçalho */
+        .dashboard__header {
+            background: #3498db;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-.dashboard__content {
-    flex-grow: 1;
-    height: 400px;
-}
+        /* Área principal do conteúdo */
+        .dashboard__content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
-.dashboard__footer {
-    height: 60px;
-}
+        /* Cards do conteúdo */
+        .dashboard__card {
+            background: #ecf0f1;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-/* Responsividade para tablets */
-@media (min-width: 768px) {
-    .dashboard {
-        width: 600px;
-    }
-}
+        /* Rodapé */
+        .dashboard__footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            font-size: 14px;
+        }
+
+        /* Responsividade para tablets */
+        @media (min-width: 768px) {
+            .dashboard {
+                width: 600px;
+            }
+        }
