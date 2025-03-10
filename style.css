@@ -1,78 +1,137 @@
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Resetando margin e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Estilização do corpo da página */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 16px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
 
-        /* Container principal do dashboard */
-        .dashboard {
-            width: 414px;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+}
 
-        /* Estilização do menu lateral */
-        .dashboard__sidebar {
-            background: #2c3e50;
-            color: white;
-            padding: 16px;
-            text-align: center;
-        }
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
 
-        /* Cabeçalho */
-        .dashboard__header {
-            background: #3498db;
-            color: white;
-            padding: 16px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-        }
+.sidebar h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-        /* Área principal do conteúdo */
-        .dashboard__content {
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+.sidebar nav ul {
+    list-style: none;
+}
 
-        /* Cards do conteúdo */
-        .dashboard__card {
-            background: #ecf0f1;
-            padding: 16px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
 
-        /* Rodapé */
-        .dashboard__footer {
-            background: #34495e;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            font-size: 14px;
-        }
+.sidebar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
 
-        /* Responsividade para tablets */
-        @media (min-width: 768px) {
-            .dashboard {
-                width: 600px;
-            }
-        }
+.sidebar nav ul li a:hover {
+    background-color: #444;
+}
+
+/* Main content */
+.main-content {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar nav ul li a {
+        font-size: 16px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
